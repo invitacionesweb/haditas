@@ -1,0 +1,723 @@
+:root {
+    --color-0: #ffffff;
+    --color-1: #D69799;
+    --color-2: #f8f3ed;
+    --color-3: #909471;
+    --font-principal: 'MiFuente';
+    --font-secundaria: 'MiFuente2';
+    --font-terciaria:'Schoolbell', cursive;
+    --font-cuarta:'Nunito Sans', sans-serif;
+}
+
+@font-face {
+    font-family: "MiFuente";
+    src: url("./AlmondBiscotti.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MiFuente2";
+    src: url("./BoulangerieCaps.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--color-0);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+/* ========================
+   BOTONES
+======================== */
+.boton {
+    border: 1px solid var(--color-1);
+    background-color: var(--color-1);
+    color: var(--color-0);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: var(--font-terciaria);
+    border-radius: 50px;
+}
+
+.boton:hover {
+    color: var(--color-1);
+    background-color: transparent;
+    border: 1px solid var(--color-1);
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+.boton2 {
+    border: 1px solid var(--color-0);
+    background-color: var(--color-0);
+    color: var(--color-3);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: var(--font-terciaria);
+    border-radius: 50px;
+}
+
+.boton2:hover {
+    color: var(--color-0);
+    background-color: transparent;
+    border: 1px solid var(--color-0);
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 200px;
+    margin: auto;
+    padding: auto ;
+}
+/* ========================
+   AUDIO
+======================== */
+.audiodiv {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 100;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.audiodiv img {
+    padding: 3px 0 0 0;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Ocultar controles nativos del audio */
+audio::-webkit-media-controls,
+audio::-webkit-media-controls-panel,
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-start-playback-button,
+audio::-webkit-media-controls-enclosure,
+audio::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+
+/* ========================
+   BACKGROUND
+======================== */
+.background {
+    width: 100%;
+    height: 90vh;
+    background-image: url(./img-editable/BACKGROUND-TWO.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ========================
+   CONTADOR
+======================== */
+.titulocontador {
+    color: var(--color-3);
+    font-family: var(--font-principal);
+    text-align: center;
+    font-size: 2.6rem;
+    padding: 40px 0 0 0;
+    margin: 0;
+}
+
+.contador {
+    display: flex;
+    color: var(--color-3);
+    justify-content: center;
+    padding: 30px 0;
+    margin: 0;
+}
+
+.bloque {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.numero {
+    font-size: 4.6em;
+    font-weight: 200;
+    font-family: var(--font-principal);
+}
+
+.etiqueta {
+    font-size: 1.6em;
+    font-family: var(--font-principal);
+    padding: 0;
+    margin: 0;
+}
+
+/* ========================
+   DATOS UBICACIÓN
+======================== */
+.datos-ubicacion {
+    padding: 20px 0 60px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: var(--color-0);
+    color: var(--color-3);
+    font-family: var(--font-terciaria);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.datos {
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.datos-ubicacion img {
+    
+    width: 180px;
+}
+
+.datos-ubicacion .fecha {
+    width: 100%;
+    max-width: 380px;
+}
+
+.datos-ubicacion .datos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+}
+.datos h2 {
+    font-family: var(--font-principal);
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--color-1);
+    padding: auto;
+    margin: 16px auto ;
+    max-width: 400px;
+}
+
+.datos p {
+    font-size: 1.6rem;
+    padding: auto;
+    margin: auto;
+    max-width: 320px;
+}
+
+/* ========================
+   FOTOS / fotos
+======================== */
+.fotos {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img-editable/TEXTURA1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+}
+
+.fotos img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    max-width: 500px;
+}
+
+.icono2 {
+    position: absolute;
+    top: -120px;
+    left: -40px;
+    z-index: 10;
+    padding: 5px;
+}
+
+.icono2 img {
+    width: 260px;
+    
+}
+
+.icono3 {
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    z-index: 10;
+}
+
+.icono3 img {
+    width: 160px;
+    max-width: 200px;
+}
+
+
+
+
+
+/* ========================
+   FYQ
+======================== */
+
+
+
+.accordion {
+    position: relative;
+    padding: 40PX 0PX;
+    width: 100%;
+    margin: auto;
+    background-color: var(--color-3);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    
+    color: var(--color-2);
+  
+}
+.accordion H3 {
+    color: var(--color-2);
+    font-family: var(--font-principal);
+    letter-spacing: 0.1rem;
+    font-size: 2.6em;
+    font-weight: lighter;
+    line-height: 1; /* espacio normal */
+    text-align: center;
+}
+.accordion-item {
+    border: 1px solid var(--color-2);
+    padding: auto;
+    margin: auto;
+    width: 80vw;
+    margin: 4PX auto;
+    height: auto;
+    color: var(--color-2);
+    background-color: var(--color-3);
+    max-width: 80vw;
+    text-align: center;
+    font-family: var(--font-terciaria);
+    line-height: 1;
+}
+.accordion-item button {
+    margin: auto;
+    text-align: center;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+       height: auto;
+    font-size: 1.4rem;
+    border: 1PX SOLID var(--color-principal);
+    background-color:var(--color-secundario);
+    color: var(--color-principal);
+    font-family: var(--font-terciaria);
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color:var(--color-principal);
+    color: var(--color-secundario);
+    
+}
+
+.accordion-content {
+    max-height: 0;
+    max-width: 700px;
+    margin: auto;
+    height: auto;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 15px 0 ;
+    margin: 0;
+    height: auto;
+     font-size: 1.4rem;
+    color: var(--color-principal);
+     font-family: var(--font-terciaria);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 900px;
+    padding: 15px;
+}
+
+.accordion-item.active .accordion-header {
+    background-color: var(--color-cuartro);
+}
+
+
+
+.DRESSCODE {
+    text-align: center;
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    margin: 0;
+    padding: 20PX 0;
+    width: auto;
+}
+.DRESSCODE, H2, P {
+    margin: 0;
+}
+.DRESSCODE ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+
+    padding: 10px 0 0 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.DRESSCODE ul li {
+    
+    width: 50px;
+    height: 50px;
+    background-color:red;
+    border-radius: 50%;
+}
+.DRESSCODE .li1 {
+    background-color: #ffffff ;
+
+}
+.DRESSCODE .li2 {
+    background-color: #F4F1E1;
+
+}
+.DRESSCODE .li3 {
+    background-color: #FAEEBA;
+
+}
+.DRESSCODE .li4 {
+    background-color: #DDCBAF;
+
+}
+.DRESSCODE .li5 {
+    background-color: #A99074;
+
+}
+.DRESSCODE .li6 {
+    background-color: #BA9B82;
+}
+.contenido a {
+    color: var(--color-principal);
+}
+.contenido a:hover {
+    color: var(--color-secundario);
+}
+
+
+
+/* =========================
+WHATSAPP
+==========================*/
+.asistencia-whatsapp {
+    text-align: center;
+    padding: 30px 0 30px 0;
+    background-image: url(./img-editable/textura3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.asistencia-whatsapp img {
+    width: 100px;
+    max-width: 220px;
+    margin: auto;
+}
+
+.asistencia-whatsapp H2 {
+    font-family: var(--font-principal);
+    color: var(--color-1);
+    font-size: 2.6rem;
+    padding: 0;
+    margin: 0;
+}
+.asistencia-whatsapp img {
+    width: 40%;
+    margin: auto;
+}
+
+.asistencia-whatsapp p {
+    font-family:var(--font-terciaria);
+    color: var(--color-3);
+    font-size: 1.6rem;
+    padding: auto;
+    margin: auto;
+    max-width: 320px;
+}
+/* ========================
+   FORMULARIO
+======================== */
+.forms {
+    text-align: center;
+    padding: 30px 0 30px 0;
+    background-image: url(./img-editable/textura3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.forms img {
+    width: 40%;
+    margin: auto;
+}
+
+.forms p {
+    font-family:var(--font-terciaria);
+    color: var(--color-3);
+    font-size: 1.6rem;
+    padding: auto;
+    margin: auto;
+    max-width: 320px;
+}
+
+.formulario {
+    max-width: 500px;
+    width: 90vw;
+    color: var(--color-3);
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.formulario .formtitle {
+    font-family: var(--font-principal);
+    color: var(--color-1);
+    font-size: 2.6rem;
+    padding: 0;
+    margin: 0;
+}
+
+.radio-group {
+    display: flex;
+    font-family: var(--font-principal);
+    align-items: center;
+    padding: 0 25%;
+    justify-content: start;
+    gap: 100px;
+    font-size: 1.2em;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-principal);
+    color: var(--color-3);
+    font-size: 1em;
+    gap: 6px;
+}
+
+.radio-option input[type="radio"] {
+    accent-color: var(--color-1);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    background-color: var(--color-0);
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: var(--color-3);
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: 2px solid var(--color-1);
+    outline-offset: 0;
+}
+
+.formulario select option {
+    color: var(--color-3);
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: var(--color-3);
+    opacity: 1;
+}
+
+.formulario textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.forms .boton {
+    font-size: 1.4rem;
+    margin: auto;
+    width: 90%;
+    font-family: var(--font-terciaria);
+}
+
+/* ========================
+   END
+======================== */
+.end {
+    width: 100%;
+    height: auto;
+    color: var(--color-1);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.end img {
+    width: 180px;
+    margin: auto;
+    padding: 0;
+}
+
+.end h2 {
+    font-family: var(--font-principal);
+    font-size: 5.5rem;
+    margin: auto;
+    max-width: 320px;
+    padding: 0;
+}
+
+.end p {
+    font-family: var(--font-terciaria);
+    color: var(--color-3);
+    font-size: 1.4rem;
+    margin: auto;
+    padding: 0;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: var(--color-1);
+    color: var(--color-0);
+    font-family: var(--font-principal);
+    padding: 40px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer .contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer img {
+    width: 60px;
+}
+
+footer p {
+    font-family: var(--font-principal);
+}
+
+.contenido ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+.contenido a {
+    color: var(--color-0);
+}
+
+.contenido a:hover {
+    color: var(--color-2);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+
+    .fotos {
+        height: 80VH;
+    }
+    .fotos .fotos-nino {
+        padding: 0;
+        margin: auto;
+        width: 96%;
+        height: auto;
+        
+        
+       
+    }
+    .fotos img {
+    
+    width: AUTO;
+    height: auto;
+    margin: auto;
+    max-width: 500px;
+}
+    .background {
+        height: 100vh;
+        background-image: url(./img-editable/BACKGROUND.ONE.png);
+    }
+
+    .datos-ubicacion .datos {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+
+}
